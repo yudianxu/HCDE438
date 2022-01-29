@@ -1,12 +1,10 @@
-/*main page info */
 .App {
-  background:linear-gradient(145deg, rgb(43, 192, 228) 42%, rgb(234, 236, 198)) 0% 0% / cover; 
+  background: linear-gradient(145deg, rgb(43, 192, 228) 42%, rgb(234, 236, 198)) 0% 0% / cover; 
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-/*page header info */
 .header {
   height: 4rem;
   width: 100%;
@@ -15,8 +13,8 @@
   align-items: center;
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.3);
+  position: absolute
 }
-/*logo info */
 .logo {
   height: 3.5rem;
   width: 3.5rem;
@@ -27,43 +25,34 @@
   border-radius: 50%;
   border: 1px solid white;
 }
-/*Big title info*/
 .title {
   color: white;
   font-weight: bold;
   font-size: 2rem;
   margin-left: 1rem;
 }
-/*footer info same with header*/
-.footer {
-  height: 4rem;
-  width: 100%;
-  border-top: 2px solid white;
+.messages {
   display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  background: rgba(255, 255, 255, 0.3);
-  position: relative;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  overflow: auto;
+  max-height: calc(100vh - 4rem - 4rem);
+  min-height: calc(100vh - 4rem - 4rem);
+  padding: 1rem;
 }
-/*text input bar info*/
-.text-input {
-  width: 80%;
-  border: 2px solid white;
-  height: 2rem;
-  border-radius: 1rem;
-  padding: 0 1rem;
-  background: grey;
+
+.message {
   color: white;
+  background: black;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 0.3rem;
+  border-left: 10px solid #00bfb6;
+  border-right: 10px solid transparent;
+  border-top: 10px rgb(43, 192, 228) 42%;
+  border-bottom: 10px solid transparent;
+  right: -20px;
+  top: 6px;
 }
-/*send bar info*/
-.send {
-  background: white;
-  border-radius: 60%;
-  border: none;
-  height: 1.8rem;
-  width: 1.8rem;
-  position: absolute;
-  right: 17rem;
-  cursor: pointer;
-}
+
 
