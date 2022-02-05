@@ -7,13 +7,12 @@
 }
 .header {
   height: 4rem;
-  width: 100%;
+  /* width: 100%; */
   border-bottom: 2px solid white;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.3);
-  position: absolute
 }
 .logo {
   height: 3.5rem;
@@ -54,5 +53,10 @@
   right: -20px;
   top: 6px;
 }
+
+.text-input > input {
+  width:calc(100% - 50px);
+}
+
 
 

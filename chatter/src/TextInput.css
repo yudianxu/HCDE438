@@ -1,7 +1,7 @@
 /*footer info same with header*/
 .footer {
     height: 4rem;
-    width: 100%;
+    /* width: 100%; */
     border-top: 2px solid white;
     display: flex;
     align-items: center;
@@ -11,23 +11,33 @@
 }
 /*text input bar info*/
 .text-input {
-    width: 80%;
-    border: 2px solid white;
+    width: 100%;
+    border: 1px solid white;
     height: 2rem;
     border-radius: 1rem;
     padding: 0 1rem;
     background: grey;
     color: white;
-}
+  }
 /*send bar info*/
 .send {
     background: white;
-    border-radius: 60%;
+    border-radius: 50%;
     border: none;
-    height: 1.8rem;
-    width: 1.8rem;
+    height: 1.7rem;
+    width: 1.7rem;
     position: absolute;
-    right: 17rem;
+    right: 1.15rem;
     cursor: pointer;
-}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .send:hover {
+    background: black;
+    border: 1px solid white;
+  }
+  .send:hover svg {
+    stroke: white;
+  }
+  
