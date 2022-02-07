@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Message from "./Message";
 import { use100vh } from "react-div-100vh";
 import Camera from 'react-snap-pic'
+import NamePicker from "./NamePicker.js";
 
 
 // this is a Component call App
@@ -49,6 +50,7 @@ function App() {
       <header className="header">
         <div className="logo" />
         <span className="title">CHATTER!</span>
+        <NamePicker></NamePicker>
       </header>
       <div className="messages">
         {messages.map((msg, i) => {
