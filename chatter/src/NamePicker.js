@@ -1,40 +1,39 @@
-import "./NamePicker.css";
 import { useState } from "react";
-import { BsPencilSquare } from 'react-icons/bs';
-import { AiOutlineCheckSquare } from 'react-icons/ai';
+import { FiEdit } from "react-icons/fi";
 
+// the component declaration
+// by convention, we name it with a capital first letter
 function NamePicker(props) {
-  const [editName, setEditName] = useState(false);
-  function set() {
-    props.setEditName(editName);
-    setName("");
+  // this is the state of the name itself
+  const [name, setName] = useState("");
+  // this is a toggle between showing and hiding the input
+  const [showInput, setShowInput] = useState(false);
+
+  // you clicked ok!
+  function ok() {
+    props.setUsername(name);
+    setShowInput(false);
   }
-  const [name, setName] = useState('')
 
-
-  return (<>
-    {editName ? <div
-      style={{ flex: 1,display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
-      <input
-        className="name-input"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-        <AiOutlineCheckSquare onClick={() => {
-          setEditName(false);
-        }} style={{ height: 30, width: 30, color: "#fff",marginLeft: "5px"}} />
-      
-    </div> :
-      (<div style={{ flex: 1,display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
-        <span style={{ color: "#fff" }}>
-          {name ? name : "Set Username"}
-        </span>
-        <BsPencilSquare style={{ height: 15, width: 15, color: "#fff", cursor: "pointer", marginLeft: "5px" }}
-          onClick={() => {
-            setEditName(true);
-          }} /></div>)
-    }
-  </>
+  if (showInput) {
+    return (
+      <div className="name-picker">
+        <input
+          className="name-picker-input"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+        <button className="name-picker-button" onClick={ok}>
+          OK
+        </button>
+      </div>
+    );
+  }
+  return (
+    <div className="name-picker">
+      <span className="name-picker-name">{name || "Set Username:"}</span>
+      <FiEdit size="24" onClick={() => setShowInput(true)} />
+    </div>
   );
 }
 
